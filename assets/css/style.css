@@ -148,6 +148,8 @@ a { color: inherit; }
   width: .985em;
   fill: currentColor;
 }
+/* запрет переноса строки внутри слова с глифом */
+.nb { white-space: nowrap; }
 .logo--footer .logo__text { color: #fff; }
 
 .nav { display: flex; gap: 26px; margin-left: auto; }
