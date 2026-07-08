@@ -251,7 +251,7 @@ a { color: inherit; }
 .hero__sticker img { border-radius: 12px; aspect-ratio: 3/3.4; object-fit: cover; width: 100%; }
 .hero__sticker figcaption { font-size: .82rem; font-weight: 600; color: var(--plum); text-align: center; padding-top: 7px; }
 .hero__sticker--left { left: clamp(-10px, 1vw, 30px); top: -40px; transform: rotate(-7deg); }
-.hero__sticker--right { right: clamp(-10px, 1vw, 30px); bottom: -34px; transform: rotate(6deg); }
+.hero__sticker--right { right: clamp(14px, 2.5vw, 44px); bottom: clamp(20px, 3vw, 44px); transform: rotate(6deg); }
 .hero__sticker--left:hover { transform: rotate(-3deg) scale(1.04); }
 .hero__sticker--right:hover { transform: rotate(2deg) scale(1.04); }
 
@@ -635,7 +635,7 @@ a { color: inherit; }
   .arch img { height: 160px; }
   .arch--up img { height: 185px; }
   .hero__sticker--left { top: -26px; }
-  .hero__sticker--right { bottom: -22px; }
+  .hero__sticker--right { bottom: 14px; right: 10px; }
   .footer__grid { grid-template-columns: 1fr; gap: 30px; }
   .contact-card__tg { display: none; }
 }
