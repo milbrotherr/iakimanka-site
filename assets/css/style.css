@@ -255,9 +255,9 @@ a { color: inherit; }
 .hero__sticker--left:hover { transform: rotate(-3deg) scale(1.04); }
 .hero__sticker--right:hover { transform: rotate(2deg) scale(1.04); }
 
-/* бегущая строка */
+/* бегущая строка: идёт ниже фотографии, не перекрывая людей на снимке */
 .marquee {
-  margin-top: clamp(-30px, -3vw, -46px);
+  margin-top: clamp(26px, 4vw, 56px);
   position: relative;
   z-index: 2;
   background: var(--plum-deep);
@@ -636,6 +636,8 @@ a { color: inherit; }
   .arch--up img { height: 185px; }
   .hero__sticker--left { top: -26px; }
   .hero__sticker--right { bottom: 14px; right: 10px; }
+  .marquee { margin-top: 22px; }
+  .marquee__track { animation-duration: 14s; }
   .footer__grid { grid-template-columns: 1fr; gap: 30px; }
   .contact-card__tg { display: none; }
 }
