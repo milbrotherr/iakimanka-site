@@ -199,14 +199,10 @@ a { color: inherit; }
 
 .hero__title {
   position: relative;
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: clamp(2.6rem, 10.5vw, 7.2rem);
-  line-height: 1.02;
-  letter-spacing: -.015em;
-  margin: 26px 0 22px;
+  width: min(100%, 1100px);
+  margin: 26px auto 22px;
 }
-.hero__title-ia { color: var(--berry); }
+.hero__title img { display: block; width: 100%; height: auto; }
 
 .hero__sub {
   position: relative;
