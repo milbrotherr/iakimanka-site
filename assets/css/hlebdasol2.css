@@ -1533,19 +1533,31 @@ a {
 
   .music-grid {
     grid-template-columns: 1fr;
+    row-gap: clamp(88px, 22vw, 112px);
   }
 
   .artist,
   .artist--large,
   .artist--dance {
+    display: flex;
+    flex-direction: column;
     grid-column: auto;
+    gap: 20px;
+    align-items: stretch;
   }
 
   .artist img,
   .artist--large img {
+    display: block;
+    width: 100%;
+    height: auto;
     min-height: 0;
     max-height: none;
     aspect-ratio: 1.1;
+  }
+
+  .artist > div {
+    padding-bottom: 0;
   }
 
   .artist:nth-child(2) img {
@@ -1590,6 +1602,7 @@ a {
 
   .hospitality-grid {
     grid-template-columns: 1fr;
+    row-gap: clamp(72px, 18vw, 92px);
   }
 
   .hospitality-card,
@@ -1597,6 +1610,20 @@ a {
   .hospitality-card:last-child {
     grid-column: auto;
     margin-top: 0;
+  }
+
+  .hospitality-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hospitality-card img {
+    display: block;
+    width: 100%;
+  }
+
+  .hospitality-card figcaption {
+    padding-top: 16px;
   }
 
   .feast-feature img {
