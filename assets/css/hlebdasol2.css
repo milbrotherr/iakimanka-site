@@ -680,7 +680,7 @@ a {
 
 .moderators__photos img:first-child {
   aspect-ratio: 1.25;
-  object-position: center 38%;
+  object-position: center 16%;
 }
 
 .moderators__photos img:last-child {
