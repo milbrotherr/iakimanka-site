@@ -783,15 +783,49 @@ a { color: inherit; }
 .fest__card:hover .fest__photo--small { transform: rotate(2.5deg) translateY(-8px); }
 
 @media (max-width: 900px) {
-  .fest__card { grid-template-columns: 1fr; padding: 28px 22px 32px; }
-  .fest__photos { aspect-ratio: 1 / .78; min-height: 260px; order: 2; }
+  .fest { padding: 18px 0 clamp(34px, 6vw, 60px); }
+  .fest__card {
+    grid-template-columns: 1fr;
+    gap: 26px;
+    padding: 30px 20px 26px;
+    border-radius: 28px;
+  }
   .fest__copy { order: 1; }
   .fest__lead { margin-bottom: 24px; }
-  .fest__ornament--birds { right: -30px; top: -50px; width: 200px; height: 154px; }
+  .fest__ornament--birds { right: -34px; top: -46px; width: 190px; height: 146px; }
   .fest__ornament--pair { display: none; }
+
+  /* на узком экране веер заменяем на аккуратную сетку */
+  .fest__photos {
+    order: 2;
+    position: static;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    aspect-ratio: auto;
+    min-height: 0;
+  }
+  .fest__photo {
+    position: static;
+    inset: auto;
+    width: auto;
+    height: auto;
+    border-width: 3px;
+    border-radius: 16px;
+    transform: none;
+  }
+  .fest__photo--main { grid-column: 1 / -1; aspect-ratio: 3 / 2; }
+  .fest__photo--portrait { aspect-ratio: 4 / 5; border-radius: 90px 90px 16px 16px; }
+  .fest__photo--small { aspect-ratio: auto; }
+
+  /* на тач-устройствах hover «залипает» — отключаем сдвиги */
+  .fest__card:hover { transform: none; }
+  .fest__card:hover .fest__photo--main,
+  .fest__card:hover .fest__photo--portrait,
+  .fest__card:hover .fest__photo--small { transform: none; }
 }
 
-@media (max-width: 460px) {
-  .fest__btn { width: 100%; justify-content: center; }
-  .fest__photo { border-width: 3px; }
+@media (max-width: 400px) {
+  .fest__card { padding: 26px 16px 22px; }
+  .fest__photos { gap: 8px; }
 }
