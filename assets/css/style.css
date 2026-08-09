@@ -791,7 +791,19 @@ a { color: inherit; }
     border-radius: 28px;
   }
   .fest__copy { order: 1; }
-  .fest__lead { margin-bottom: 24px; }
+  .fest__lead { margin-bottom: 24px; font-size: 1rem; }
+
+  /* заголовок в две строки вместо трёх */
+  .fest__title { font-size: clamp(1.5rem, 6.6vw, 2rem); }
+
+  /* плашка не должна переноситься */
+  .fest__kicker-long { display: none; }
+  .fest__kicker {
+    font-size: .72rem;
+    letter-spacing: .12em;
+    padding: 5px 14px;
+    margin-bottom: 16px;
+  }
   .fest__ornament--birds { right: -34px; top: -46px; width: 190px; height: 146px; }
   .fest__ornament--pair { display: none; }
 
