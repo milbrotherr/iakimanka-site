@@ -632,3 +632,166 @@ a { color: inherit; }
   .teams__grid { grid-template-columns: 1fr; }
   .hero__actions .btn { width: 100%; justify-content: center; }
 }
+
+/* ═══════════ ФЕСТИВАЛЬ · ПЕРЕХОД НА СТРАНИЦУ ═══════════ */
+@font-face {
+  font-family: 'NAMU';
+  src: url('../fonts/hlebdasol2/namu-1400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.fest {
+  --fest-red: #940019;
+  --fest-red-deep: #6F0013;
+  --fest-cream: #FFE8D8;
+  --fest-gold: #D99A37;
+  padding: clamp(24px, 4vw, 56px) 0 clamp(40px, 6vw, 80px);
+}
+
+.fest__card {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  align-items: center;
+  gap: clamp(24px, 4vw, 60px);
+  padding: clamp(30px, 4.4vw, 64px);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--fest-cream);
+  background:
+    radial-gradient(120% 130% at 12% 0%, #A80020 0%, var(--fest-red) 42%, var(--fest-red-deep) 100%);
+  box-shadow: 0 40px 90px -40px rgba(111, 0, 19, .75);
+  transition: transform .6s var(--ease), box-shadow .6s var(--ease);
+}
+.fest__card:hover { transform: translateY(-6px); box-shadow: 0 52px 110px -44px rgba(111, 0, 19, .85); }
+
+/* орнаменты фестиваля, перекрашенные в кремовый через маску */
+.fest__ornament {
+  position: absolute;
+  background: var(--fest-cream);
+  opacity: .1;
+  pointer-events: none;
+  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+  -webkit-mask-size: contain;    mask-size: contain;
+}
+.fest__ornament--birds {
+  top: -34px; right: 40%;
+  width: 320px; height: 246px;
+  transform: rotate(-6deg);
+  -webkit-mask-image: url('../img/hlebdasol2/ornament-birds.svg');
+  mask-image: url('../img/hlebdasol2/ornament-birds.svg');
+}
+.fest__ornament--pair {
+  bottom: -40px; left: -46px;
+  width: 240px; height: 184px;
+  -webkit-mask-image: url('../img/hlebdasol2/ornament-pair.svg');
+  mask-image: url('../img/hlebdasol2/ornament-pair.svg');
+}
+
+.fest__copy { position: relative; z-index: 2; }
+
+.fest__kicker {
+  display: inline-block;
+  font-weight: 600;
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: var(--fest-gold);
+  background: rgba(217, 154, 55, .16);
+  border: 1px solid rgba(217, 154, 55, .35);
+  border-radius: 999px;
+  padding: 6px 16px;
+  margin-bottom: 20px;
+}
+
+.fest__title {
+  font-family: 'NAMU', var(--font-display), sans-serif;
+  font-weight: 400;
+  font-size: clamp(1.9rem, 4.6vw, 2.6rem);
+  line-height: 1.02;
+  letter-spacing: .01em;
+  text-transform: uppercase;
+  color: var(--fest-cream);
+  margin: 0 0 18px;
+}
+.fest__title span { color: var(--fest-gold); }
+
+.fest__lead {
+  max-width: 44ch;
+  font-size: 1.06rem;
+  line-height: 1.55;
+  color: rgba(255, 232, 216, .78);
+  margin-bottom: 30px;
+}
+.fest__lead .ya { color: inherit; }
+
+.fest__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 15px 32px;
+  border-radius: 999px;
+  background: var(--fest-cream);
+  color: var(--fest-red);
+  transition: background .3s var(--ease), color .3s var(--ease), gap .3s var(--ease);
+}
+.fest__btn i { font-style: normal; transition: transform .35s var(--ease); }
+.fest__card:hover .fest__btn { background: var(--fest-gold); color: #2A1719; }
+.fest__card:hover .fest__btn i { transform: translateX(5px); }
+
+/* коллаж */
+.fest__photos {
+  position: relative;
+  z-index: 1;
+  aspect-ratio: 1 / .84;
+  min-height: 300px;
+}
+.fest__photo {
+  position: absolute;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 26px 60px -24px rgba(42, 0, 8, .7);
+  border: 4px solid var(--fest-cream);
+  transition: transform .7s var(--ease);
+}
+.fest__photo img { width: 100%; height: 100%; object-fit: cover; }
+
+.fest__photo--main {
+  top: 0; right: 0;
+  width: 78%; height: 66%;
+  transform: rotate(2deg);
+}
+.fest__photo--portrait {
+  left: 0; bottom: 0;
+  width: 44%; height: 74%;
+  border-radius: 120px 120px 20px 20px;
+  transform: rotate(-4deg);
+}
+.fest__photo--small {
+  right: 6%; bottom: 2%;
+  width: 42%; height: 38%;
+  transform: rotate(4deg);
+}
+.fest__card:hover .fest__photo--main { transform: rotate(1deg) translateY(-6px); }
+.fest__card:hover .fest__photo--portrait { transform: rotate(-2.5deg) translateY(-4px); }
+.fest__card:hover .fest__photo--small { transform: rotate(2.5deg) translateY(-8px); }
+
+@media (max-width: 900px) {
+  .fest__card { grid-template-columns: 1fr; padding: 28px 22px 32px; }
+  .fest__photos { aspect-ratio: 1 / .78; min-height: 260px; order: 2; }
+  .fest__copy { order: 1; }
+  .fest__lead { margin-bottom: 24px; }
+  .fest__ornament--birds { right: -30px; top: -50px; width: 200px; height: 154px; }
+  .fest__ornament--pair { display: none; }
+}
+
+@media (max-width: 460px) {
+  .fest__btn { width: 100%; justify-content: center; }
+  .fest__photo { border-width: 3px; }
+}
