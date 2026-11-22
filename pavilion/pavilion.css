@@ -78,3 +78,12 @@ dialog::backdrop { background:#0a1932dd; }
   .plan-picker button { padding:.5rem .65rem; }
   .plan { margin-inline:-2px; }
 }
+
+.gallery.meeting-formats img {
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 8px;
+}
+@media (max-width: 620px) {
+  .gallery.meeting-formats { grid-template-columns: 1fr; }
+}
