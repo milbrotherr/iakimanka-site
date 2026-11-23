@@ -13,7 +13,7 @@ nav a,footer a { color:var(--navy); font-weight:600; text-decoration:none; }
 nav a:hover,footer a:hover { text-decoration:underline; }
 .hero,.help { background:var(--navy); color:white; }
 .hero-grid { display:grid; grid-template-columns: .83fr 1.17fr; align-items:center; gap:clamp(25px,4vw,68px); padding-block:clamp(44px,6vw,88px); }
-.hero-image img { display:block; width:100%; aspect-ratio:1.57; object-fit:cover; border-radius:4px; }
+.hero-image img { display:block; width:100%; height:auto; aspect-ratio:2752 / 1536; border-radius:4px; }
 .hero-image figcaption { color:#dce7ff; }
 h1,h2,h3,p { margin:0; }
 h1,h2,h3 { text-wrap:balance; line-height:1.08; }
@@ -46,9 +46,9 @@ button { cursor:pointer; font:inherit; }
 .plan-picker [aria-pressed="true"] { background:var(--blue); color:white; border-color:var(--blue); }
 .plan { border:1px solid var(--line); border-radius:10px; padding:clamp(14px,3vw,36px); }
 .plan h3 { margin-top:0; }
-.plan p { max-width:72ch; }
+.plan p { max-width:72ch; margin-bottom:.75rem; }
 .plan figure { max-width:950px; margin:16px auto; }
-.plan figure img { aspect-ratio:1.75; object-fit:contain; }
+.plan figure img { aspect-ratio:1252 / 760; object-fit:contain; }
 .text-link { font-weight:650; text-underline-offset:4px; }
 details { border-block-start:1px solid var(--line); margin-top:1.5rem; }
 summary { cursor:pointer; padding:.9rem 0; font-weight:700; color:var(--navy); }
@@ -68,7 +68,6 @@ dialog::backdrop { background:#0a1932dd; }
   :root { font-size:16px; }
   .hero-grid,.intro { grid-template-columns:1fr; }
   .hero-grid { gap:24px; padding-block:32px; }
-  .hero-image img { aspect-ratio:1.8; }
   .bar { min-height:60px; }
   .bar img { width:105px; }
   nav { gap:12px; font-size:.85rem; }
